@@ -1,6 +1,6 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import { averageController } from "../controllers/averageController";
 
-export const router = Router();
+export const AverageRouter = Router();
 
-router.get('/media', averageController)
+AverageRouter.get("/media", averageController);

@@ -1,19 +1,21 @@
-//Chamar middlewares e rotas
-const express = require('express')
-const cors = require('cors')
-const logger = require('morgan')
-import { Request, Response } from 'express';
-import { router } from "./routes/averageRoute";
+const express = require("express");
+const cors = require("cors");
+const logger = require("morgan");
+import { Request, Response } from "express";
+import { AverageRouter } from "./routes/averageRoute";
+import { getCepRouter } from "./routes/getCepRoute";
 
 export const app = express();
 
-app.use(express.json())
-app.use(cors())
-app.use(logger('dev'))
+app.use(express.json());
+app.use(cors());
+app.use(logger("dev"));
 
-app.get('/media', router)
+app.get("/media", AverageRouter);
+app.get("/cep", getCepRouter);
 
-//pensar em algo para por aqui
-app.get('/', function (req: Request, res: Response) {
-  res.status(200).send('App source')
-})
+app.get("/", function (req: Request, res: Response) {
+  res.status(200).send({
+    message: "App is running see the routes /media and /cep",
+  });
+});

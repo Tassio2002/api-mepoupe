@@ -14,5 +14,5 @@ export const averageController = (req: Request, res: Response) => {
     });
   }
 
-  res.status(200).send(averageCalculator(num1, num2));
+  res.status(200).send({ result: averageCalculator(num1, num2) });
 };

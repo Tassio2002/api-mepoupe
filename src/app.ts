@@ -19,3 +19,5 @@ app.get("/", function (req: Request, res: Response) {
     message: "App is running see the routes /media and /cep",
   });
 });
+
+module.exports = app;

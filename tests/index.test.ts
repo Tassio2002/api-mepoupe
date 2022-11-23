@@ -1,3 +1,4 @@
+// add respons status code
 import axios from "axios";
 import { getViacepResponse } from "../src/services/viaCepRequest";
 const request = require("supertest");
@@ -10,7 +11,7 @@ describe("Routes test", () => {
     expect(res.body).toHaveProperty("message");
   });
 
-  it("Should get the result of calculating the average of two numbers", async () => {
+  it("Should get the result of calculating the average of two numbers.", async () => {
     const res = await request(app)
       .get("/media")
       .send({ num1: 8.75, num2: 7.55 });
